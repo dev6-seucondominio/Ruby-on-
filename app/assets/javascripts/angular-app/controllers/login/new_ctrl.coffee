@@ -1,11 +1,9 @@
 angular.module 'app'
   .controller 'Login::NewCtrl', [
-    '$scope', 'LoginResource'
-    (sc, LoginResource)->
-
-      sc.loginEnter = {}
+    '$scope', 'LoginResource', '$resource'
+    (sc, LoginResource, $resource)->
 
       sc.confirmLogin = (user)->
-        # LoginService
-        # console.log LoginService.ative(user)
+        user = LoginResource.get { name: 'Diego Felipe' } , ()->
+          console.log user
   ]

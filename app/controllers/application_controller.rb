@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  # before_filter :somente_logado, only: [:new, :create]
+  before_filter :somente_logado, only: [:new, :create]
   
   def login_user(user)
     session[:user_session] = user

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  # before_filter :somente_logado
+  skip_before_filter :verify_authenticity_token
+  before_filter :somente_logado, only: [:new, :create]
 
   def index
     respond_to do |format|
@@ -22,9 +23,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save 
-      render :show
+      login_user(@user)
+      render json: @user
     else
-      render :new
+      render json: {errors: @user.errors.full_messages}
     end
   end
 

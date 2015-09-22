@@ -2,10 +2,7 @@ angular.module 'app'
   .factory 'UsersResource', [
     '$resource'
     ($resource)->
-      return $resource('/users/:id', {}, {
-          get: { cache: true, method: 'GET' }
-        }
-      )
+      return $resource('/users.json')
 
   ]
 # serv =

@@ -1,10 +1,12 @@
 # encoding: UTF-8
 class LoginController < ApplicationController
   skip_before_filter  :verify_authenticity_token
-  # skip_before_filter  :somente_logado, only: [:new, :create]
 
   def new
-    render_layout
+    respond_to do |format|
+      format.html { render_layout }
+      format.json { render json: User.all }
+    end
 	end
 
 	def create

@@ -27,6 +27,17 @@ angular.module 'app', [
 .controller 'controll', [
   '$scope'
   (sc)->
-    sc.user_log_bool = false
-    sc.user_log = []
+
+    sc.user_log = {
+      bool: false
+    }
+    
+    sc.set_user = (name)->
+      sc.user_log.name = name
+      sc.user_log.bool = true
+      console.log sc.user_log
+    
+
+    sc.testeControll = ()->
+      alert 'entt...'
 ]

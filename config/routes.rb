@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   get 'cadastro' => 'users#new'
   get 'home' => 'home#home'
   resources :login
-  resources :users, only: [:index, :show]
+  resources :users
 
 end

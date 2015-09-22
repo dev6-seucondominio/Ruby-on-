@@ -1,4 +1,4 @@
-<section ng-init="init()" ng-show="index" class="bloco sc-bg-white sc-p-lg sc-border-radius" style="display: table;">
+<section ng-init="init()" ng-show="index" class="bloco sc-bg-white sc-p-lg sc-border-radius" style="max-height: 48em; overflow: auto;">
   
   <h1>Listagem de usuarios</h1>
 
@@ -146,7 +146,7 @@
     <div style="margin: 0 atuo;" class="buttonDefault">
       <button ng-hide="user_log_bool"><a href="/login">Voltar</a></button>
       <button ng-show="user_log_bool" ng-click="backPage()">Voltar</button>
-      <button ng-click="confirmLogin(loginEnter)">Salvar</button>
+      <button ng-click="new_user(loginEnter)">Salvar</button>
     </div>
   </div>
 

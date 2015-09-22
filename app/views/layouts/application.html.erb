@@ -12,16 +12,16 @@
 
     <div class="top">
       <div class="dados">
-        <div ng-show="user_log_bool">
-          <span class="sc-cursor-pointer">Olá, <b>{{user_log.name}}</b></span>
+        <div ng-show="user_log.bool">
+          <span>Olá, <b>{{user_log.name}}</b></span>
           <span class="sc-cursor-pointer">sair</span>
         </div>
-        <div ng-hide="user_log_bool">
+        <div ng-hide="user_log.bool">
           <span class="sc-cursor-pointer"><a href="/login">Entrar</a></span>
           <span class="sc-cursor-pointer sc-m-l-lg"><a href="/users">Cadastrar</a></span>
         </div>
       </div>
-      <div class="menu">
+      <div ng-show="user_log.bool" class="menu">
         <ul>
           <li><a href="/users">Lista de Usuários</a></li>
         </ul>
