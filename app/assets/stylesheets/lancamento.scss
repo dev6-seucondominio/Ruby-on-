@@ -1,0 +1,698 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ */
+
+@font-face {
+  font-family: 'sc-icons';
+  src: url(sc-icons.woff);
+}
+
+.iconDesig {
+  top: .6em;
+  left: .5em;
+  margin: 0 !important;
+  position: relative;
+  color: #000000;
+  text-decoration: none;
+  cursor: pointer;
+  padding: .5em;
+  position: relative;
+  i {
+    transition-duration: 250ms;
+  }
+  .circleHover {
+    width: 2em;
+    height: 2em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    transition-duration: 250ms;
+    transform: scale(0);
+  }
+}
+
+.iconDesig:hover {
+  i {
+    color: white;
+  }
+  .circleHover {
+    transform: scale(1);
+  }
+}
+
+.iconDesig-red {
+  i {
+    color: #c74848;
+  }
+  .circleHover {
+    background-color: #c74848;
+  }
+}
+
+.iconDesig-green {
+  i {
+    color: #42b342;
+  }
+  .circleHover {
+    background-color: #42b342;
+  }
+}
+
+.iconDesig-yellow {
+  i {
+    color: #e58c00;
+  }
+  .circleHover {
+    background-color: #e58c00;
+  }
+}
+
+.btn-exemplo {
+  transition: all 100ms ease-in-out;
+  box-shadow: 2px -2px 1px rgba(0,0,0,.4);
+  margin-top: .3em;
+  border-bottom: 2px solid #59f;
+}
+
+.fixScroll {
+  position: relative;
+  top: 4.4em;
+  z-index: 2;
+  .top-bar {
+    border-top: 1.5px solid gray;
+    position: fixed;
+    top: 4.2em;
+    width: 100%;
+    z-index: 10;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+  }
+}
+
+.btn-exemplo:hover {
+  background: #2590d9;
+  background: -ms-linear-gradient(top, #2590d9 0%, #135ca6 30%);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(30%, #2590d9), color-stop(100%, #135ca6));
+  background: -webkit-linear-gradient(top, #2590d9 30%, #135ca6);
+}
+
+.btn-exemplo:active {
+  box-shadow: none;
+  position: relative;
+  top: 2px;
+  border: none;
+}
+
+.btn-exemplo-Click {
+  box-shadow: none;
+  position: relative;
+  top: 2px;
+  border: none;
+}
+
+
+.cardHover {
+  background-color: rgba(0,0,0,.2);
+}
+
+#card {
+  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+  display: inline-table;
+  width: 17em;
+  position: relative;
+  cursor: pointer;
+  margin: .8em;
+  .clickCard {
+    width: 17em !important;
+  }
+  .min-card {
+    width: 5em;
+    height: 100%;
+    background: rgba(0, 0, 0, .1);
+    transition: width 500ms;
+    position: absolute;
+  }
+}
+
+#card:hover .min-card {
+  width: 17em;
+  #percent {
+    background: none;
+  }
+}
+
+@media (max-widht: 750px) {
+  
+} 
+
+input.typeahead-combo{
+  cursor: pointer;
+  padding-right: 1.8em;
+  background-image: asset-url('https://www.seucondominio.com.br/assets/typeahead/search-e018421dd276ff1fd31e5f3ba2716acc.svg');
+  background-size: contain;
+  background-position: right center;
+  background-repeat: no-repeat;
+}
+input.typeahead-search{
+  padding-left: 1.8em;
+  background-image: url('https://www.seucondominio.com.br/assets/typeahead/search-e018421dd276ff1fd31e5f3ba2716acc.svg');
+  background-size: .8em;
+  background-position: 0.5em center;
+  background-repeat: no-repeat;
+}
+.typeahead-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+  float: left;
+  min-width: 160px;
+  margin: 1px 0 0;
+  list-style: none;
+  font-size: 1em;
+  background-color: #fff;
+  -webkit-box-shadow: 0 5px 8px rgba(0,0,0,.2);
+  box-shadow: 0 5px 8px rgba(0,0,0,.2);
+  background-clip: padding-box;
+  max-height: 18em;
+  overflow-y:auto;
+  border-radius: .2em;
+}
+.typeahead-dropdown-menu>li.group-list>h1{
+  color:#333;
+  margin: .1em .2em;
+  clear: both;
+}
+.typeahead-dropdown-menu>li.match-list,
+.typeahead-dropdown-menu>li.group-list>ul>li.match-list{
+  &>a {
+    display: block;
+    padding: .6em .8em;
+    line-height: 1.42857143;
+    color: #0078C1;
+    background-color: #f7f7f7;
+    .sc-icon {margin-right: .4em}
+    &>span.index{
+      border: 1px solid red;
+      background-color: yellow;
+      padding: .2em;
+      font-size: 1.2em;
+      margin: .2em;
+      margin-right: .6em;
+      display: inline-block;
+      min-width: 1.8em;
+      text-align: center;
+      border-radius: .4em;
+    }
+    &>div.no-records{
+      font-weight: normal;
+    }
+    &>div.new-record,&>div.no-records{
+      display: table;
+      &>span,&>i{
+        display:table-cell;
+        vertical-align: middle;
+      }
+      &>span.pre-text{
+        font-weight: normal;
+        padding-right: .2em;
+      }
+    }
+    & b.highlight{
+      background-color: #BBD2E6;
+      padding: 0 1px;
+      border-radius: 0.2em;
+    }
+  }
+  &.even{
+    &>a {background-color: #f0f0f0;}
+  }
+  &:first-of-type a {border-radius: .2em .2em 0 0;}
+  &:last-of-type a {border-radius: 0 0 .2em .2em;}
+  &.active{
+    &>a b.highlight{
+      background-color: #5F9BCF;
+    }
+    &>a>span.index{
+      color:#000;
+    }
+    &>a, &>a:hover, &>a:active{
+      color: #fff;
+      text-decoration: none;
+      outline: 0;
+      background-color: #77ACD9;
+    }
+  }
+}
+
+// Modal - Seu Condominio
+body .sc-modal {
+  transform: none !important;
+  right: 0 !important;
+  left: 0 !important;
+}
+
+body .sc-modal.ng-hide-remove {
+  animation: modalShowEffect .2s linear 1;
+}
+body .sc-modal.ng-hide-add {
+  animation: modalHideEffect 1s linear 1;
+}
+
+@keyframes modalHideEffect {
+  0% {
+    transform:scale(1);
+  }
+  100% {
+    transform:scale(0.5);
+  }
+}
+
+@keyframes modalShowEffect{
+  0% {
+    transform:scale(0.7);
+  }
+  45% {
+    transform:scale(1.05);
+  }
+  80% {
+    transform:scale(0.95);
+  }
+  100% {
+    transform:scale(1);
+  }
+}
+// Modal - Seu Condominio
+
+//efeitos
+
+//search
+.buttonSearch {
+  top: .7em;
+  right: 4.4em;
+  overflow: hidden;
+  position: absolute !important;
+}
+
+.buttonSearch.ng-hide-remove {
+  animation: buttonAnimation .75s;
+}
+
+.buttonSearch.ng-hide-add {
+  animation: buttonAnimation .75s reverse;
+}
+
+@keyframes buttonAnimation {
+  0% {
+    opacity: 0;
+    transform: rotate(0deg) scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(360deg) scale(1.2);
+  }
+}
+//end Search
+//menu mobile down
+
+//end menu mobile down
+
+//end efeitos
+
+//Menu
+header {
+  left: 0;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 5;
+  #head1, #head2 {
+    padding: .8em;
+    background: #2590d9;
+    background: -ms-linear-gradient(top, #2590d9 0%, #135ca6 30%);
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(30%, #2590d9), color-stop(100%, #135ca6));
+    background: -webkit-linear-gradient(top, #2590d9 30%, #135ca6);
+    border-bottom: 1px solid black;
+  }
+  .logo {
+    cursor: pointer;
+    display: inline-table;
+  }
+  section.barraMenu2 {
+    width: 100%;
+    .buscaMobile {
+      padding-right: 3.7em;
+      padding-left: .5em;
+      right: 3em;
+      width: 100%;
+      right: 0;
+      position: fixed;
+      z-index: 100;
+      input {
+        float: right;
+        right: .3em;
+        width: 98%;
+        border-radius: 2em;
+        border-color: #999999;
+        background-color: #CCC;
+        &.ng-hide-add {
+          animation: inputAnimate .75s reverse;
+        }
+        &.ng-hide-remove {
+          animation: inputAnimate .75s;
+        }
+      }
+    }
+    ul.menu-mobile-conf {
+      position: absolute;
+      width: 2em;
+      height: 13em;
+      border-radius: 1em;
+      right: .4em;
+      top: 1em;
+      z-index: 10;
+      border: 1px solid rgba(0,0,0,.1);
+      li.icon1 {
+        position: absolute;
+        right: -6px;
+        top: 2em;
+      }
+      li.icon2 {
+        position: absolute;
+        right: -6px;
+        top: 5em;
+      }
+      li.icon3 {
+        position: absolute;
+        right: -6px;
+        top: 8em;
+      }
+      li.icon4 {
+        position: absolute;
+        right: -6px;
+        top: 11em;
+      }
+    }
+    ul.menu-mobile-conf.ng-hide-add {
+      webkit-animation: menuAnimatehide .75s reverse;
+      animation: menuAnimatehide .75s reverse;
+      .menuIconsAnimate {
+        webkit-animation: menuIconsAnimate 1s reverse;
+        animation: menuIconsAnimate 1s reverse;
+      }
+    }
+    ul.menu-mobile-conf.ng-hide-remove {
+      webkit-animation: menuAnimate .75s;
+      animation: menuAnimate .75s;
+      .menuIconsAnimate {
+        webkit-animation: menuIconsAnimate .75s;
+        animation: menuIconsAnimate .75s;
+      }
+    }
+    .openBusca {
+      z-index: 20;
+      width: 100%;
+      right: 0;
+      input {
+        width: 100%;
+      }
+      button {
+        position: absolute;
+        top: 0;
+      }
+    }
+  }
+  section.barraMenu1 {
+    ul.menuStyle {
+      border-radius: .5em;
+      padding: 1em 0;
+      li {
+        color: #4C4C4C;
+        border: none;
+        border-left-width: .3em;
+        border-left-style: solid;
+        border-left-color: transparent;
+        &:hover {
+          border-left-color: #2590d9;
+        }
+      }
+    }
+    .clickscale {
+      i {
+        color: #FFF !important;
+      }
+      .circleHover {
+        transform: scale(1) !important;
+      }
+    }
+    .notClickscale {
+      .circleHover {
+        transform: scale(0) !important;
+      }
+    }
+  }
+}
+div.buttonBackTop {
+  position: fixed;
+  bottom: 3em;
+  right: 4em;
+  z-index: 100;
+  transform: scale(1);
+  .testeclick {
+    background: #2590d9 !important;
+    a i {
+      color: #FFF !important;
+    }
+  }
+  a {
+    border: none;
+    background: none;
+    border: 2px solid #2590d9;
+    i {
+      color: #2590d9;
+    }
+  }
+  &.ng-hide-add { animation: backTopAnimate .75s reverse; }
+  &.ng-hide-remove { animation: backTopAnimate .75s; }
+}
+#previsaoOrc {
+  position: relative;
+}
+
+.menu-responsivo {
+  position: fixed;
+  overflow: auto;
+  height: 100%;
+  top: 4.3em;
+  width: 85%;
+  color: #FFF;
+  background-color: #222222;
+  text-shadow: 1px 1px 1px #111;
+  z-index: 10;
+}
+
+.menu-responsivo.ng-hide-add {
+  animation: 1s showMenu reverse;
+}
+
+.menu-responsivo.ng-hide-remove {
+  animation: 1s showMenu;
+}
+
+@keyframes menuIconsAnimate {
+  0% {
+    top: -15px;
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes inputAnimate {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 98%;
+    opacity: 1;
+  }
+}
+
+@keyframes menuAnimate {
+  0% {
+    opacity: 0;
+    height: 0;
+  }
+  50% {
+    height: 15em;
+  }
+  100% {
+    opacity: 1;
+    height: 13em;
+  }
+}
+
+@keyframes menuAnimatehide {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 13em;
+  }
+}
+
+@keyframes showMenu {
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+  50% {
+    opacity: .5;
+    width: 90%;
+  }
+  100% {
+    opacity: 1;
+    width: 85%;
+  }
+}
+
+@keyframes backTopAnimate {
+  0% {
+    bottom: -4em;
+  }
+  100% {
+    bottom: 3em;
+  }
+}
+
+.corpo {
+  z-index: 0;
+  position: relative;
+}
+
+@media (min-width: 751px) {
+  .corpo {
+    top: 10.9em;
+  }
+  #previsaoOrc {
+    top: 10em;
+  }
+
+  header {
+    button.setaEsquerdaFlut, div#head2, section.barraMenu2 {
+      display: none !important;
+    }
+    div.head2 {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  section#cobrancas .corpo #barraTotal label#totalCurrency {
+    width: 36% !important;
+  }
+  body.sc-system {
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+  }
+  header {
+    div.head2 {
+      width: 100%;
+    }
+    div#head1, div#caminhosTela, section.barraMenu1 {
+      display: none !important;
+    }
+  }
+
+  .notMobile {
+    display: none !important;
+  }
+  .okMobile {
+    display: block !important;
+  }
+
+  section#cobrancas .corpo #barraTotal label#totalCurrency {
+    width: 36% !important;
+  }
+  body ul.sc-accordion > li > .sc-accordion-head > *.sc-accordion-icon-col {
+    width: 3.6em !important;
+  }
+}
+
+@media (min-width: 501px) {
+  .somaMarcadosClass {
+    overflow: hidden;
+    white-space: nowrap;
+    border-color: #c1c4c8;
+    padding: 0.4em;
+    border-style: solid;
+    border-width: 1px;
+    width: 13em;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 510px) {
+  #totais {
+    width: 100%;
+  }
+  #totais > label {
+    width: 50%;
+    margin: 0;
+  }
+  #totais > label:last-child {
+    width: calc(50% - 1em);
+    margin-right: 1em;
+  }
+}
+
+@media (min-width: 511px) {
+  #totais {
+    width: auto;
+  }
+  
+}
+
+@media (max-width: 750px) {
+  header {
+    div.head2 {
+      width: 100%;
+    }
+    div#head1, div#caminhosTela, section.barraMenu1 {
+      display: none !important;
+    }
+  }
+  section#previsaoOrc {
+    top: 7.9em;
+  }
+  .okMobile {
+    display: none !important;
+  }
+  .corpo {
+    top: 8.4em;
+  }
+}
+
+
+//end Menu
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>  
+    <title>Login</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <base href="/">
+  </head>
+  <body ng-app="app" ng-controller='controll'>
+
+    <div class="top">
+      <div class="dados">
+        <div ng-show="user_log_bool">
+          <span class="sc-cursor-pointer">Olá, <b>{{user_log.name}}</b></span>
+          <span class="sc-cursor-pointer">sair</span>
+        </div>
+        <div ng-hide="user_log_bool">
+          <span class="sc-cursor-pointer"><a href="/login">Entrar</a></span>
+          <span class="sc-cursor-pointer sc-m-l-lg"><a href="/users">Cadastrar</a></span>
+        </div>
+      </div>
+      <div class="menu">
+        <ul>
+          <li><a href="/users">Lista de Usuários</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="view_page">
+      <div ng-view class="view-animate"></div>
+    </div>
+    
+  </body>
+</html>

@@ -1,0 +1,153 @@
+<section ng-init="init()" ng-show="index" class="bloco sc-bg-white sc-p-lg sc-border-radius" style="display: table;">
+  
+  <h1>Listagem de usuarios</h1>
+
+  <div class="sc-align-center inline-flex sc-m-b-lg">
+    <div class="col-15">
+      Name
+    </div>
+    <div class="col-18">
+      Action
+    </div>
+  </div>
+
+  <div ng-repeat="user in users">
+    <div class="inline-block">
+      <div class="inline-block">
+        <div class="col-15">
+          {{user.name}}
+        </div>
+      </div>
+      <div style="margin-top: 0;" class="buttonDefault col-18 inline-block">
+        <button ng-click="edit_user(user.id)">Editar</button>
+        <button ng-click="show_user(user.id)">Detalhes</button>
+        <button ng-click="delete_user(user)">Deletar</button>
+      </div>
+      <hr ng-show="$index != users.length-1" style="margin: 0.5em 0;" >
+    </div>
+  </div>
+
+</section>
+
+<section ng-show="show" class="bloco sc-bg-white sc-p-lg sc-border-radius" style="display: table;">
+  <h1>Delhes de cadastro Cadastro</h1>
+
+  <div class="sc-align-center inline-flex sc-m-b-lg">
+    <div class="col-6">
+      Id
+    </div>
+    <div class="col-15">
+      Name
+    </div>
+    <div class="col-15">
+      Login
+    </div>
+    <div class="col-15">
+      Password
+    </div>
+  </div>
+
+  <div>
+    <div class="inline-block">
+      <div class="inline-flex">
+        <div class="col-6">
+          {{user.id}}
+        </div>
+        <div class="col-15">
+          {{user.name}}
+        </div>
+        <div class="col-15">
+          {{user.login}}
+        </div>
+        <div class="col-15">
+          {{user.password}}
+        </div>
+      </div>
+    </div>
+    <div style="margin: 1em auto 0;" class="buttonDefault col-18 align-center">
+      <button ng-click="show = false; index = true">Voltar</button>
+    </div>
+  </div>
+
+</section>
+
+<section ng-show="edit" class="bloco sc-bg-white sc-p-lg sc-border-radius">
+
+  <h1>Editar Cadastro</h1>
+  <p>{{user.name}}, altere os campos e salve para realizar a altereção</p>
+
+  <div style="margin: 0 auto;">
+    <div style="margin-right: 1em; display: inline-block;">
+      <div style="margin-top: .3em" class="col-6">
+        Name
+      </div>
+      <div style="margin-top: .3em" class="col-6">
+        Login
+      </div>
+      <div style="margin-top: .3em" class="col-6">
+        Password
+      </div>
+    </div>
+
+    <div style="margin: 0 auto; display: inline-block; width: 13em;">
+      <div class="col-6">
+        <input ng-model="editUser.name" type="text" >
+      </div>
+      <div class="col-6">
+        <input ng-model="editUser.login" type="text" >
+      </div>
+      <div class="col-6">
+        <input ng-model="editUser.password" type="password" >
+      </div>
+    </div>
+    <div style="margin: 0 atuo;" class="buttonDefault">
+      <button ng-click="backPage()">Voltar</button>
+      <button ng-click="update_user(editUser.id)">Salvar</button>
+    </div>
+  </div>
+
+</section>
+
+<section ng-show="cadastro" class="bloco sc-bg-white sc-p-lg sc-border-radius">
+
+  <h1>Cadastro</h1>
+  <p>Preencha os campos com (*) para ter acesso ao sistema</p>
+
+  <div style="margin: 0 auto;">
+    <div style="margin-right: 1em; display: inline-block; width: 9em; text-align: right;">
+      <div style="margin: 1em 0;">
+        Name
+      </div>
+      <div style="margin: 1em 0;">
+        Login
+      </div>
+      <div style="margin: 1em 0;">
+        Password
+      </div>
+      <div style="margin: 1em 0;">
+        Confirm Password
+      </div>
+    </div>
+
+    <div style="margin: 0 auto; display: inline-block; position: relative; bottom: 0.6em;">
+      <div style="margin-bottom: .3em">
+        <input ng-model="loginEnter.name" type="text" >
+      </div>
+      <div style="margin-bottom: .3em">
+        <input ng-model="loginEnter.login" type="text" >
+      </div>
+      <div style="margin-bottom: .3em">
+        <input ng-model="loginEnter.password" type="password" >
+      </div>
+      <div style="margin-bottom: .3em">
+        <input ng-model="loginEnter.password2" type="password" >
+      </div>
+    </div>
+    <div style="margin: 0 atuo;" class="buttonDefault">
+      <button ng-hide="user_log_bool"><a href="/login">Voltar</a></button>
+      <button ng-show="user_log_bool" ng-click="backPage()">Voltar</button>
+      <button ng-click="confirmLogin(loginEnter)">Salvar</button>
+    </div>
+  </div>
+
+</section>

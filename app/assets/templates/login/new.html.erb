@@ -1,0 +1,29 @@
+<section class="bloco sc-bg-white sc-p-lg sc-border-radius">
+
+  <h1>Seja Bem Vindo</h1>
+  <p>Digite eu Login e sua senha para entrar no sistema</p>
+
+  <div style="margin: 0 auto;">
+    <div style="margin-right: 1em; display: inline-block;">
+      <div style="margin: 1em 0;">
+        Login
+      </div>
+      <div style="margin: 1em 0;">
+        Password
+      </div>
+    </div>
+
+    <div style="margin: 0 auto; display: inline-block; width: 13em; position: relative; top: -0.5em;">
+      <div class="col-6">
+        <input ng-model="loginEnter.login" type="text" >
+      </div>
+      <div class="col-6">
+        <input ng-model="loginEnter.password" type="password" >
+      </div>
+    </div>
+    <div style="margin: 0 atuo;" class="buttonDefault">
+      <button ng-click="confirmLogin(loginEnter)">Entrar</button>
+    </div>
+  </div>
+
+</section>

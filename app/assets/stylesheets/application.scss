@@ -1,0 +1,157 @@
+/*
+*= require prototype
+*= require animation
+*= require_tree .
+*/
+
+@font-face {
+  font-family: 'sc-icons';
+  src: url(sc-icons.woff);
+}
+
+body {
+  background-image: url("/assets/grunge-background-azul.jpg");
+  overflow: hidden;
+}
+
+.bloco {
+  text-align: center;
+  h1 {
+    margin-bottom: 1em;
+  }
+}
+
+span {
+  a {
+    color: rgba(0,0,0,0.6);
+    text-decoration: none;
+  }
+}
+
+li {
+  a {
+    color: rgba(0,0,0,0.6);
+    text-decoration: none;
+  }
+}
+
+.bloco { width: 40em; margin: 0 auto;}
+
+.top {
+  width: 100%;
+  background-color: rgba(255,255,255,.4);
+  position: fixed;
+  top: 0;
+  padding: 1em;
+  .dados {
+    float: right;
+  }
+  .menu {
+    cursor: pointer;
+  }
+}
+
+.view_page {
+  color: rgba(0,0,0,0.6);
+  top: 5em;
+  position: relative;
+  margin: 0 auto;
+  // padding: .7em;
+  // width: 40em;
+  height: 100%;
+  // background-color: #FFF;
+}
+
+.buttonDefaultSubmit {
+  &:focus {
+    outline: none;
+    background-color: rgba(0,0,0,0.4);
+  }
+}
+
+.buttonDefault {
+  &:focus {
+    outline: none;
+    border-radius: .5em;
+    background-color: rgba(0,0,0,0.4);
+  }
+}
+
+.buttonDefault, .buttonDefaultSubmit {
+  input {
+    margin-top: .1em;
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: .3em 1.5em;
+    background-color: rgba(0,0,0,0.6);
+    &:focus {
+      border-radius: 0 !important;
+    }
+  }
+  button {
+    margin-top: .1em;
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: .3em 1.5em;
+    background-color: rgba(0,0,0,0.6);
+    a {
+      margin-left: 0;
+      text-decoration: none;
+    }
+  }
+}
+
+input {
+  padding: .3em .5em;
+  border: none;
+  background: none;
+  border-bottom: 1px solid rgba(0,0,0,0.4);
+  &:focus {
+    outline: none;
+    border-radius: .5em;
+    background-color: rgba(0,0,0,0.2);
+  }
+}
+
+.buttonDefault {
+  margin-top: 1em;
+  input {
+    border: none;
+    background: none;
+    background-color: rgba(0,0,0,0.2);
+  }
+  button {
+    color: rgba(0,0,0,0.6);
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: .3em 1.5em;
+    background-color: rgba(0,0,0,0.2);
+    a {
+      color: rgba(0,0,0,0.6);
+      text-decoration: none;
+    }
+  }
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.col-6 {
+  width: 6em;
+}
+
+.col-15 {
+  width: 10em;
+}
+
+.col-18 {
+  width: 18em;
+}

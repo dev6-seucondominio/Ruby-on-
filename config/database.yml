@@ -1,0 +1,33 @@
+
+common: &default_settings
+  # Required license key associated with your New Relic account.
+  license_key: 0cb8b8ce48a9b6af6fa52315577ce055c431d0c9
+
+  # Your application name. Renaming here affects where data displays in New
+  # Relic.  For more details, see https://docs.newrelic.com/docs/apm/new-relic-apm/maintenance/renaming-applications
+  #app_name: My Application
+
+  # To disable the agent regardless of other settings, uncomment the following:
+  # agent_enabled: false
+
+  # Logging level for log/newrelic_agent.log
+  log_level: info
+
+default: &default
+  adapter: sqlite3
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  database: db/development.sqlite3
+  developer_mode: true
+
+test:
+  <<: *default
+  database: db/test.sqlite3
+  monitor_mode: false
+
+production:
+  <<: *default
+  database: db/production.sqlite3

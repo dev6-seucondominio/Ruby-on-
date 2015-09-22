@@ -1,0 +1,32 @@
+angular.module 'app', [
+  'sc.app.helpers', 'ngRoute', 'ngResource'
+]
+
+.config [
+  '$routeProvider', '$locationProvider', '$resourceProvider'
+  ($routeProvider, $locationProvider, $resourceProvider) ->
+
+    $routeProvider
+      .when '/home' || '/',
+        templateUrl: "/assets/home/home"
+        controller: 'Home::HomeCtrl'
+      .when '/users',
+        templateUrl: "/assets/users/index"
+        controller: 'Users::IndexCtrl'
+      .when '/cadastro',
+        templateUrl: "/assets/users/new"
+        controller: 'Users::IndexCtrl'
+      .when '/login',
+        templateUrl: "/assets/login/new"
+        controller: 'Login::NewCtrl'
+
+    # $resourceProvider.defaults.stripTrailingSlashes = false;
+    $locationProvider.html5Mode(true)
+  ]
+
+.controller 'controll', [
+  '$scope'
+  (sc)->
+    sc.user_log_bool = false
+    sc.user_log = []
+]
